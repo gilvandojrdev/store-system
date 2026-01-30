@@ -6,4 +6,4 @@ Futuramente, quando eu dominar o banco de dados, eu vou atualizar o projeto. Ele
 
 Como utilizar?
 
-Digite a opção que está salva no Enum que você pode ver nos utils ou só interprete o texto e, com base nas perguntas, você dá uma entrada no produto.
+Digite a opção que está salva no Enum que você pode ver nos utils ou só interpretar o texto e, com base nas perguntas, você dá uma entrada no produto.
