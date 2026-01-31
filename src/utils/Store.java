@@ -1,4 +1,8 @@
+import java.util.StringTokenizer;
+
 public class Store {
+
+    public String divider = "--------------------------------------";
 
     public enum OpcoesLoja {
         CADASTRAR(1);
@@ -13,28 +17,21 @@ public class Store {
             return OPCAO;
         }
     }
+    
+    public String produtos(String produtos){
+        StringTokenizer tokenizer = new StringTokenizer(produtos, ",");
+        int tokenCount = tokenizer.countTokens();
+        String[] stringArray = new String[tokenCount];
 
-    private static String name;
-    private static int quantity;
-    private static double price;
+        for (int i = 0; i < tokenCount; i++) {
+            stringArray[i] = tokenizer.nextToken();
+        }
 
+        System.out.println("Produtos cadastrados: ");
 
-    public static String getName(){
-        return name;
+        for (String element : stringArray) {
+            System.out.println(element);
+        }
+        return divider;
     }
-
-    public  String setName(String name){
-        this.name = name;
-        return name;
-    }
-
-    public double getPrice(){
-        return price;
-    }
-
-    public double setPrice(double price){
-        this.price = price;
-        return price;
-    }
-
 }
