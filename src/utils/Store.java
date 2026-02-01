@@ -1,37 +1,25 @@
-import java.util.StringTokenizer;
+import java.io.Serializable;
+import java.util.ArrayList;
 
-public class Store {
+public class Products {
 
-    public String divider = "--------------------------------------";
+    private ArrayList lista_produtos = new ArrayList<>();
+    private String divider = "-------------------";
 
-    public enum OpcoesLoja {
-        CADASTRAR(1);
-
-        private final int OPCAO;
-
-        OpcoesLoja(int opcao){
-            this.OPCAO = opcao;
-        }
-
-        public int getOption(){
-            return OPCAO;
-        }
+    public Products(){
+        this.lista_produtos = lista_produtos;
+        this.divider = divider;
     }
-    
-    public String produtos(String produtos){
-        StringTokenizer tokenizer = new StringTokenizer(produtos, ",");
-        int tokenCount = tokenizer.countTokens();
-        String[] stringArray = new String[tokenCount];
 
-        for (int i = 0; i < tokenCount; i++) {
-            stringArray[i] = tokenizer.nextToken();
-        }
-
-        System.out.println("Produtos cadastrados: ");
-
-        for (String element : stringArray) {
-            System.out.println(element);
-        }
+    public Serializable cadastrarProdutos(String produtos){
+        lista_produtos.add(produtos);
         return divider;
+    }
+
+    public void exibirProdutos(){
+        System.out.println("Produtos adicionados: ");
+        for (int i = 0; i < lista_produtos.size(); i++){
+            System.out.println("["+i+"] " + lista_produtos.get(i));
+        }
     }
 }
