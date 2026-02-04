@@ -23,8 +23,10 @@ public class Store {
             System.out.println("Deseja cadastrar mais produtos? (s ou n)");
             option = sc.next();
 
-            System.out.println("Deseja setar os preço dos produtos? (s ou n)");
-            option2 = sc.next();
+            if(option.equals("n")){
+                System.out.println("Deseja setar os preço dos produtos? (s ou n)");
+                option2 = sc.next();
+            }
         }
 
         prod.exibirProdutos();
