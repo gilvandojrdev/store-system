@@ -11,6 +11,8 @@ public class Store {
         String option = "s";
         String option2 = "s";
 
+
+        // Tenho que refatorar a lógica de adicionar mais produtos...
         while (option.equals("s")) {
             System.out.println("Digite o nome do produto que deseja cadastrar: ");
             String nomeProduto = sc.next();
@@ -40,5 +42,8 @@ public class Store {
             option2 = sc.next();
 
         }
+
+        System.out.println(prod.exibirDados());
+
     }
 }
