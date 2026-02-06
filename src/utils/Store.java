@@ -61,7 +61,7 @@ public class Products {
     }
 
     public String exibirDados(){
-        return "Informações da loja:\n produtos cadastrados:"  + lista_produtos + "\n, Produto cadastrados com valores: " ; // Em desenvolvimento...
+              return "Informações da loja: produtos cadastrados: "  + lista_produtos + " , Produto cadastrados com valores: " ; // Em desenvolvimento...
     }
 
 };
