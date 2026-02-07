@@ -1,8 +1,10 @@
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Products {
+    Scanner sc = new Scanner(System.in);
     private List<Object> lista_produtos = new ArrayList<>();
     private String divider = "-------------------";
     private double produto_preco;
@@ -27,8 +29,11 @@ public class Products {
     }
 
 
-    public Serializable cadastrarProdutos(String produtos){
-        lista_produtos.add(produtos);
+    public Serializable cadastrarProdutos(){
+        System.out.println("Digite o nome do produto que deseja cadastrar");
+        String nomeProduto = sc.next();
+        lista_produtos.add(nomeProduto);
+        System.out.println("Produto " + nomeProduto + " cadastrado com sucesso");
         return divider;
     }
 
@@ -39,29 +44,23 @@ public class Products {
         }
     }
 
-    public String cadastrarPrecoProduto(String nome_produto, double preco_produto){
+    public String cadastrarPrecoProduto(){
 
-        this.produto_preco = preco_produto;
-        this.nome_produto = nome_produto;
+        System.out.println("Digite o nome do produto que você deseja setar o preço");
+        nome_produto = sc.next();
+        System.out.println("Digite o preço do produto " + getNomeProduto());
+        double preco_produto = sc.nextDouble();
 
-        for (Object object : lista_produtos){
-
-            if (lista_produtos.contains(nome_produto)){
-                System.out.println("Produto de nome: " + getNomeProduto() + " foi setado o preço " + getPrecoProduto());
-            } else {
+        if (lista_produtos.contains(nome_produto)){
+            System.out.println("Produto de nome: " + nome_produto + " foi setado o preço " + preco_produto);
+        } else {
                 System.out.println("Esse produto não existe na lista");
-            }
-
-            if(lista_produtos.contains(preco_produto)){
-                System.out.println("Já existe produto com esse preço tente outro produto");
-            }
-
         }
+
         return divider;
     }
 
     public String exibirDados(){
-              return "Informações da loja: produtos cadastrados: "  + lista_produtos + " , Produto cadastrados com valores: " ; // Em desenvolvimento...
+        return "Informações da loja: produtos cadastrados: \n"  + nome_produto + " | " + produto_preco ; // Em desenvolvimento...
     }
-
 };
